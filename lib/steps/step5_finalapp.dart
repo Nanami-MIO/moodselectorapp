@@ -38,40 +38,65 @@ class _MoodPageState extends State<MoodPage> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(title: const Text('Mood Selector Homepage')),
+      backgroundColor: Colors.pink[50],
+      appBar: AppBar(
+        title: const Text('Mood Selector Homepage'),
+        centerTitle: true,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(moodEmoji, style: const TextStyle(fontSize: 100)),
             Text(moodTitle, style: const TextStyle(fontSize: 28)),
-            const SizedBox(height: 40),
+            const SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () => selectMood('😀','Happy Mood'),
-                  child: const Text('Good'),
+                  onPressed: () => selectMood('😀','HAPPY!'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange[200],
+                    foregroundColor: Colors.white,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text('😀',style: TextStyle(fontSize: 28)),
+                      Text('Good Mood',style: TextStyle(fontSize: 18)),
+                    ],
+                  ),
                 ),
                 const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: () => selectMood('😢','Sad Mood'),
-                  child: const Text('Bad'),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: () => selectMood('😊','Normal Mood'),
-                  child: const Text('General'),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: () => selectMood('😡','Angry Mood'),
-                  child: const Text('😡\nAngry',
-                    style: TextStyle(
-                      fontSize: 10,
-                      background: Paint()..color = Colors.orange,
 
-                    ),
+                ElevatedButton(
+                  onPressed: () => selectMood('😢','SAD…'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueGrey[200],
+                    foregroundColor: Colors.white,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text('😢',style: TextStyle(fontSize: 28)),
+                      Text('Bad Mood',style: TextStyle(fontSize: 18)),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 10),
+
+                ElevatedButton(
+                  onPressed: () => selectMood('😐','OK~'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue[300],
+                    foregroundColor: Colors.white,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text('😐',style: TextStyle(fontSize: 28)),
+                      Text('Normal Mood',style: TextStyle(fontSize: 18)),
+                    ],
                   ),
                 ),
                 const SizedBox(width: 10),
